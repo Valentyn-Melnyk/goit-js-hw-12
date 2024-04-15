@@ -5,8 +5,6 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +20,224 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+/* #region form */
+
+.form-search {
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  padding-top: 36px;
+  /* padding-bottom: 32px; */
+  background-color: #fff;
+  gap: 8px;
+}
+
+input[name='search'] {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  background-color: #fff;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+  outline: transparent;
+  border: 1px solid #808080;
+  padding-left: 16px;
+}
+input[name='search']:focus {
+  border-color: #000000;
+}
+
+.btn-search {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+
+  background-color: #4e75ff;
+  color: #fff;
+
+  border: none;
+}
+
+.btn-search:hover {
+  background-color: #6c8cff;
+}
+/* #endregion form */
+
+/* #region gallery */
+.gallery {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+  padding: 24px 156px;
+}
+.gallery-item {
+  position: relative;
+  width: calc((100% - 2 * 24px) / 3);
+  border: none;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.gallery-image {
+  height: 152px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery-image:hover {
+  transform: scale(1.0444);
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+}
+
+.gallery-link:hover {
+  cursor: pointer;
+}
+
+.gallery-stat {
+  display: flex;
+  justify-content: space-evenly;
+  height: 48px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.gallery-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-stat-item-b {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.gallery-stat-item-p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* #endregion gallery */
+
+.btn-load-more {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.btn-load-more:hover {
+  background-color: #6c8cff;
+}
+
+/* #region ----- Spiner --------- */
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #fff #fff transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #2c8245 #2c8245;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #b4a8a8 #b4a8a8 transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* #endregion ----- Spiner --------- */
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
