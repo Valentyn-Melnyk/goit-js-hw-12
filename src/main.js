@@ -68,13 +68,13 @@ async function handleSubmit(event) {
       }
       form.reset();
     } catch (error) {
-      // сonsole.log(error.response.status); приклад не для цього API
+      // сonsole.log(error.response.status);
       console.log(error.message);
-      showMessage(
-        `Ups! Something went wrong, please try again later!`,
-        '#0099FF',
-        octagon
-      );
+      // showMessage(
+      //   `Ups! Something went wrong, please try again later!`,
+      //   '#0099FF',
+      //   octagon
+      // );
     } finally {
       hideLoader();
     }
@@ -139,13 +139,13 @@ async function OnBtnLoadMore() {
       );
     }
   } catch (error) {
-    // сonsole.log(error.response.status); приклад не для цього API
+    // сonsole.log(error.response.status);
     console.log(error.message);
-    showMessage(
-      `Ups! Something went wrong, please try again later!`,
-      '#0099FF',
-      octagon
-    );
+    // showMessage(
+    //   `Ups! Something went wrong, please try again later!`,
+    //   '#0099FF',
+    //   octagon
+    // );
   } finally {
     hideLoader();
   }
