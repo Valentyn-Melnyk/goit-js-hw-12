@@ -16,7 +16,7 @@ export const getFotos = async (str, page, per_page) => {
     },
   };
 
-  return await axios.get(`/api/`, axiosOptions);
+  return await axios.get('/api/', axiosOptions);
 };
 
 // export const getFotos = (str, page, per_page) => {
