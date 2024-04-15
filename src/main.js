@@ -68,12 +68,13 @@ async function handleSubmit(event) {
       }
       form.reset();
     } catch (error) {
-      // error => console.log(error.response.status);
+      // сonsole.log(error.response.status); приклад не для цього API
       console.log(error.message);
-      iziToast.error({
-        position: 'topRight',
-        message: `Ups! Something went wrong, please try again later!`,
-      });
+      showMessage(
+        `Ups! Something went wrong, please try again later!`,
+        '#0099FF',
+        octagon
+      );
     } finally {
       hideLoader();
     }
@@ -137,8 +138,14 @@ async function OnBtnLoadMore() {
         bell
       );
     }
-  } catch {
-    error => console.log(error);
+  } catch (error) {
+    // сonsole.log(error.response.status); приклад не для цього API
+    console.log(error.message);
+    showMessage(
+      `Ups! Something went wrong, please try again later!`,
+      '#0099FF',
+      octagon
+    );
   } finally {
     hideLoader();
   }
