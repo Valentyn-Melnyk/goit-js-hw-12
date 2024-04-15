@@ -72,7 +72,7 @@ async function handleSubmit(event) {
       console.log(error.message);
       // showMessage(
       //   `Ups! Something went wrong, please try again later!`,
-      //   '#0099FF',
+      //   '#EF4040',
       //   octagon
       // );
     } finally {
@@ -143,7 +143,7 @@ async function OnBtnLoadMore() {
     console.log(error.message);
     // showMessage(
     //   `Ups! Something went wrong, please try again later!`,
-    //   '#0099FF',
+    //   '#EF4040',
     //   octagon
     // );
   } finally {
