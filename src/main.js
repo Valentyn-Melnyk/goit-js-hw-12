@@ -70,11 +70,11 @@ async function handleSubmit(event) {
     } catch (error) {
       // сonsole.log(error.response.status);
       console.log(error.message);
-      // showMessage(
-      //   `Ups! Something went wrong, please try again later!`,
-      //   '#EF4040',
-      //   octagon
-      // );
+      showMessage(
+        `Ups! Something went wrong, please try again later!`,
+        '#EF4040',
+        octagon
+      );
     } finally {
       hideLoader();
     }
@@ -141,11 +141,11 @@ async function OnBtnLoadMore() {
   } catch (error) {
     // сonsole.log(error.response.status);
     console.log(error.message);
-    // showMessage(
-    //   `Ups! Something went wrong, please try again later!`,
-    //   '#EF4040',
-    //   octagon
-    // );
+    showMessage(
+      `Ups! Something went wrong, please try again later!`,
+      '#EF4040',
+      octagon
+    );
   } finally {
     hideLoader();
   }
